@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://calculator.settleup.earth/calculator.schema.json",
+  "title": "Calculator Schema",
+  "description": "SettleUp Earth Carbon Calculator Schema",
+  "type": "object",
+  "definitions": {
+    "question": {
+      "type": "object",
+      "properties": {
+        "question_number": {
+          "type": "number"
+        },
+        "question_text": {
+          "type": "string"
+        },
+        "question_secondary_text": {
+          "type": "string"
+        },
+        "question_answer": {
+          "type": "string"
+        }
+      }
+    },
+    "mc_question": {
+      "type": "object",
+      "properties": {
+        "question_choices": {
+          "type": "array"
+        }
+      },
+      "extends": {
+        "$ref": "#/definitions/question"
+      }
+    }
+  },
+  "properties": {
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#definitions/question"
+      }
+    }
+  },
+  "required": [
+    "questions"
+  ]
+}
