@@ -1,43 +1,53 @@
 import { createSlice, SliceCaseReducers } from '@reduxjs/toolkit'
-import { getQuestions, updateAnswers } from './actions'
-import { QuestionaireState } from './state'
+import { getQuestions, loadQuestions, setCounterValue, setCurrentQuestionId} from './actions'
+import { QuestionType} from '../../interfaces/generated_interfaces'
+import { CalculatorState } from './state'
 
 
-export const questionaire = createSlice<QuestionaireState, SliceCaseReducers<QuestionaireState>>({
-  name: 'questionaire',
+export const calculator = createSlice<CalculatorState, SliceCaseReducers<CalculatorState>>({
+  name: 'calculator',
   initialState: { counter: 1,
-                  currentQuestions: [],
-                  currentAnswers: [],
-                  currentQuestionId: 1,
-  },
+                  questions: [],
+                  currentQuestionId: 1
+  } as CalculatorState,
   reducers: {
-    increment(state) {
-      state.counter++
-    },
-    reset(state) {
-      state.counter = 1
-    }
   },
   extraReducers: (builder) => {
     builder.addCase(getQuestions.pending, (state, action) => {
 
     })
     builder.addCase(getQuestions.fulfilled, (state, action) => {
-      state.currentQuestions = action.payload
+      state.questions = action.payload
     })
     builder.addCase(getQuestions.rejected, (state, action) => {
 
     })
-    builder.addCase(updateAnswers.pending, (state, action) => {
 
+    builder.addCase(setCurrentQuestionId, (state, action) => {
+      if(action.payload != undefined){
+        state.currentQuestionId = action.payload
+      }  
     })
-    builder.addCase(updateAnswers.fulfilled, (state, action) => {
-      state.currentAnswers = action.payload
-    })
-    builder.addCase(updateAnswers.rejected, (state, action) => {
 
+    builder.addCase(loadQuestions, (state, action) => {
+        fetch(action.payload)
+          .then(response => response.json())
+          .then(json => {
+            let questions: QuestionType[] = []
+            json.keys().map((key: string) =>{
+              questions.push(json[key])
+            })
+            state.questions = questions
+          });
     })
+
+    builder.addCase(setCounterValue, (state, action) => {
+      if(action.payload != undefined){
+        state.counter = action.payload
+      }  
+    })
+
   }
 })
 
-const {increment, reset} = questionaire.actions
+export default calculator.reducer

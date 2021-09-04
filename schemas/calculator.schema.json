@@ -11,30 +11,40 @@
         "question_number": {
           "type": "number"
         },
+        "question_type": {
+          "type": "string",
+          "oneOf": ["text", "multiple_choice"]
+        },
         "question_text": {
           "type": "string"
         },
         "question_secondary_text": {
           "type": "string"
         },
+        "question_score_value": {
+          "type": ["number", "array"]
+        },
         "question_answer": {
-          "type": "string"
-        }
-      }
-    },
-    "mc_question": {
-      "type": "object",
-      "properties": {
+          "type": "integer"
+        },
         "question_choices": {
-          "type": "array"
+          "type": "object",
+          "$ref": "#definitions/question_choice"
         }
       },
-      "extends": {
-        "$ref": "#/definitions/question"
+      "required": ["question_number", "question_type", "question_text"]
+    },
+    "question_choice": {
+      "type": "object",
+      "properties": {
+        "choice_id": { "type": "number" },
+        "value": { "type": "string" }
       }
+
     }
   },
   "properties": {
+    "id": { "type": "number" },
     "questions": {
       "type": "array",
       "items": {

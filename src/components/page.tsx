@@ -1,11 +1,13 @@
 import React from 'react'
 import {Box, Grommet, Text} from 'grommet'
-import food from '../Food.gif'
+import forest from '../data/forest.jpg'
 import {css} from 'styled-components'
 import {grommet} from 'grommet/themes'
 import {deepMerge} from 'grommet/utils'
 import { useSelector, useDispatch} from "react-redux";
-import { QuestionaireState } from '../pages/calculator/state'
+import { CalculatorState } from '../pages/calculator/state'
+import { setCounterValue } from '../pages/calculator/actions'
+
 
 const customTheme = deepMerge(grommet, {
     radioButton: {
@@ -52,16 +54,20 @@ const customTheme = deepMerge(grommet, {
 
 
 export const Page = ({children}: { children: string | React.ReactElement }) => {
-    const dispatch = useDispatch();
-    // @ts-ignore
-    const counter = useSelector( (state : {QuestionaireState}) => state.questionaire);
+    const dispatch = useDispatch()
+    const counter = useSelector<CalculatorState, number>(state => state.counter)
+    const text = `v0.${counter}.0 - Copyright SettleUp ltd. 2021`
     console.log(counter)
     return <Grommet theme={customTheme}>
-        <Box fill direction='column' justify='center' gap='small' background={`url('${food}')`}>
+        <Box fill direction='column' justify='center' gap='small' background={`url('${forest}')`}>
             {children}
-            <Box align='center' margin='large' justify='end' round='small' pad='medium'>
-                <Text size='xsmall' color='white'>v0.{counter.counter}.0 - Copyright SettleUp ltd. 2021</Text>
-                <button onClick={()=> dispatch({type: 'increment'})}>Increment</button>
+            <Box align='center' margin='large' justify='end' round='small' pad='medium' background='black'>
+                <Text size='xsmall' color='white'>{text}</Text>
+                <Box align='center' fill direction='row' gap='xsmall'>
+                    <button onClick={()=> dispatch(setCounterValue( counter + 1 ))}>Increment</button>
+                    <button onClick={()=> dispatch(setCounterValue( counter - 1 ))}>Decrement</button>
+                    <button onClick={()=> dispatch(setCounterValue( 5 ))}>Set to 5...</button>
+                </Box>
             </Box>
         </Box>
     </Grommet>

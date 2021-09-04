@@ -4,25 +4,31 @@ import { useDispatch } from 'react-redux'
 import { produce } from 'immer'
 import Api from '../../api/index'
 import {createAction} from "@reduxjs/toolkit";
-
+import { QuestionType }from '../../interfaces/generated_interfaces'
 
 export const getQuestions = createAsyncThunk<
-    string[]
+    QuestionType[]
     >(
-    'questionaire/getQuestions/',
+    'calculator/getQuestions/',
     async () => {
         let api = new Api()
-        return await api.get(`/questionaire`)
+        return await api.get('https://c48a753e-5320-4d32-babc-b216eba72849.mock.pstmn.io')
     }
 )
 
-export const updateAnswers = createAsyncThunk<
-    string[], //return type of eventual execution
-    {answers: string[]} //typescript args to thunk
+export const updateAnswer = createAsyncThunk<
+    (string | number), //return type of eventual execution
+    { answer: (string | number) } //typescript args to thunk
     >(
-    "questionaire/updateAnswers/",
-    async ({answers}) => {
+    "calculator/updateAnswers/",
+    async ({answer}) => {
         let api = new Api()
-        return await api.post(`/questionaire/`, answers)
+        return await api.post(`/calculator/`, { "answer": answer })
   }
 )
+
+export const loadQuestions = createAction<string>("calculator/loadQuestions")
+
+export const setCurrentQuestionId = createAction<number| undefined>("calculator/setCurrentQuestionId/")
+
+export const setCounterValue = createAction<number | undefined>("calculator/setCounterValue/")

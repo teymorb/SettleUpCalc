@@ -1,18 +1,17 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, StoreEnhancer, applyMiddleware, combineReducers } from 'redux'
 import { createLogger } from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
-import { questionaire } from '../pages/calculator/reducer'
-import {QuestionaireState} from "../pages/calculator/state";
-
+import { calculator} from '../pages/calculator/reducer'
 
 const store = createStore(
     combineReducers({
-        questionaire: questionaire.reducer,
+        calculator: calculator.reducer,
     }),
     applyMiddleware(
         thunkMiddleware,
       createLogger(),
     )
-
 )
+ 
+ 
 export default store

@@ -1,0 +1,141 @@
+
+ {
+     "q1" : {
+        "questionNumber": 1,
+        "questionType": "multiple_choice",
+        "questionText": "Have you got a few minutes to estimate your personal carbon emissions?",
+        "questionAnswer": "",
+        "questionSecondaryText": "The calculator shouldn't take more than 5 minutes, but if you'd prefer you can continue with the average emissions of an adult in the UK.",
+        "questionScoreValue": [0, 9150],
+        "questionSuccessor": 2,
+        "questionChoices": ["Yes", "No"]
+    },
+    "q2" : {
+        "questionNumber": 2,
+        "questionType": "multiple_choice",
+        "questionText": "How often do you eat meat?",
+        "questionAnswer": "",
+        "questionScoreValue": [2620.7, 2054.95, 1704.55, 1438.1, 1390.65, 1051.2],
+        "questionSecondaryText": "",
+        "questionChoices": ["In most meals (almost every day)", 
+                            "In most meals (2-4 times a week)", 
+                            "Infrequently (<2 times a week)", 
+                            "Pescatarian", 
+                            "Vegetarian", 
+                            "Vegan"]
+    },
+    "q3" : {
+        "questionNumber": 3,
+        "questionType": "multiple_choice",
+        "questionText": "Which mode of transport do you use most frequently?",
+        "questionAnswer": "",
+        "questionChoices": [
+            "Car",
+            "Motorcycle",
+            "Electric Vehicle",
+            "Public Transport",
+            "Bicycle/Walking"
+        ],
+        "questionSecondaryText": ""
+    },
+    "q4" : {
+        "questionNumber": 4,
+        "questionText": "How many hours do you spend travelling each week?",
+        "questionType": "multiple_choice",
+        "questionAnswer": "",
+        "questionSecondaryText": "",
+        "questionChoices": [
+            "Less than 5",
+            "5-10",
+            "10-15",
+            "15-20",
+            "20-25",
+            "More than 25"
+        ]
+    },
+    "q5" : {
+        "questionNumber": 5,
+        "questionType": "multiple_choice",
+        "questionText": "Would you like to offset your flights?",
+        "questionAnswer": "",
+        "questionChoices": ["Yes", "No"],
+        "questionSecondaryText": ""
+    },
+    "q6" : {
+        "questionNumber": 6,
+        "questionType": "text",
+        "questionText": "How many super long haul flights (10+ hours) did you take last year?",
+        "questionAnswer": "",
+        "questionSecondaryText": ""
+    },
+    "q7" : {
+        "questionNumber": 7,
+        "questionType": "text",
+        "questionText": "How many short haul flights (<7 hours) did you take last year?",
+        "questionAnswer": "",
+        "questionSecondaryText": ""
+    },
+    "q8" : {
+        "questionNumber": 8,
+        "questionType": "text",
+        "questionText": "How many long haul flights (7-10 hours) did you take last year?",
+        "questionAnswer": "",
+        "questionSecondaryText": ""
+    },
+    "q9" : {
+        "questionNumber": 9,
+        "questionType": "multiple_choice",
+        "questionText": "Are you on a renewable electricity tariff?",
+        "questionAnswer": "",
+        "questionChoices": ["Yes", "No"],
+        "questionSecondaryText": ""
+    },
+    "c10" : {
+        "questionNumber": 10,
+        "questionType": "multiple_choice",
+        "questionText": "What is the monthly electricity bill for your home? If you live with others, please only account for the proportion you use",
+        "questionAnswer": "",
+        "questionChoices": [
+                    "£0-£25",
+                    "£25-£50",
+                    "£50-£100",
+                    "More than £100",
+                    "Uncertain (UK average will be used)"
+                ],
+        "questionSecondaryText": ""
+    },
+    "c11" : {
+        "questionNumber": 11,
+        "questionType": "multiple_choice",
+        "questionText": "What is the monthly heating bill for your home? If you live with others, please only account for the proportion you use",
+        "questionAnswer": "",
+        "questionChoices": [
+                    "£0-£25",
+                    "£25-£50",
+                    "£50-£100",
+                    "More than £100",
+                    "Uncertain (UK average will be used)"
+                ],
+        "questionSecondaryText": ""
+    },
+    "c12" : {
+        "questionNumber": 12,
+        "questionType": "text",
+        "questionText": "How many new large appliances (e.g. mobile phones, laptops, TVs, white goods) do you typically buy in a year?",
+        "questionAnswer": "",
+        "questionSecondaryText": ""
+    },
+    "c13" : {
+        "questionNumber": 13,
+        "questionType": "multiple_choice",
+        "questionText": "How much do you spend in an average month on clothing? Please do not include items you have bought second hand",
+        "questionAnswer": "",
+        "questionChoices": [
+                    "£0-£20",
+                    "£20-£50",
+                    "£50-£100",
+                    "More than £100"
+                ],
+        "questionSecondaryText": ""
+    }
+}

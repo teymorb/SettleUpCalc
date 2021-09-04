@@ -1,9 +1,8 @@
-import React from 'react'
+import { QuestionType } from '../../interfaces/generated_interfaces'
 
 
-export interface QuestionaireState {
+export interface CalculatorState {
       counter: number,
-      currentQuestions: string[],
-      currentAnswers: string[],
+      questions: QuestionType[],
       currentQuestionId: number
 }
