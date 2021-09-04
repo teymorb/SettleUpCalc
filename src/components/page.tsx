@@ -59,7 +59,7 @@ export const Page = ({children}: { children: string | React.ReactElement }) => {
     const text = `v0.${counter}.0 - Copyright SettleUp ltd. 2021`
     console.log(counter)
     return <Grommet theme={customTheme}>
-        <Box fill direction='column' justify='center' gap='small' background={`url('${forest}')`}>
+        <Box fill direction='column' align='center' gap='small' background={`url('${forest}')`}>
             {children}
             <Box align='center' margin='large' justify='end' round='small' pad='medium' background='black'>
                 <Text size='xsmall' color='white'>{text}</Text>

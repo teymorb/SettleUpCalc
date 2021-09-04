@@ -1,17 +1,12 @@
-import { createStore, StoreEnhancer, applyMiddleware, combineReducers } from 'redux'
-import { createLogger } from 'redux-logger'
-import thunkMiddleware from 'redux-thunk'
-import { calculator} from '../pages/calculator/reducer'
+import logger from 'redux-logger'
+import { configureStore } from '@reduxjs/toolkit'
+import { calculator } from '../pages/calculator/reducer'
 
-const store = createStore(
-    combineReducers({
-        calculator: calculator.reducer,
-    }),
-    applyMiddleware(
-        thunkMiddleware,
-      createLogger(),
-    )
-)
+const store = configureStore({
+    reducer: calculator.reducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    devTools: process.env.NODE_ENV !== 'production'
+})
  
  
 export default store
