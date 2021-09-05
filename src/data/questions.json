@@ -1,6 +1,5 @@
-
- {
-     "q1" : {
+ { "questions":[
+    {
         "questionNumber": 1,
         "questionType": "multiple_choice",
         "questionText": "Have you got a few minutes to estimate your personal carbon emissions?",
@@ -10,7 +9,7 @@
         "questionSuccessor": 2,
         "questionChoices": ["Yes", "No"]
     },
-    "q2" : {
+    {
         "questionNumber": 2,
         "questionType": "multiple_choice",
         "questionText": "How often do you eat meat?",
@@ -24,7 +23,7 @@
                             "Vegetarian", 
                             "Vegan"]
     },
-    "q3" : {
+    {
         "questionNumber": 3,
         "questionType": "multiple_choice",
         "questionText": "Which mode of transport do you use most frequently?",
@@ -38,7 +37,7 @@
         ],
         "questionSecondaryText": ""
     },
-    "q4" : {
+    {
         "questionNumber": 4,
         "questionText": "How many hours do you spend travelling each week?",
         "questionType": "multiple_choice",
@@ -53,7 +52,7 @@
             "More than 25"
         ]
     },
-    "q5" : {
+    {
         "questionNumber": 5,
         "questionType": "multiple_choice",
         "questionText": "Would you like to offset your flights?",
@@ -61,28 +60,28 @@
         "questionChoices": ["Yes", "No"],
         "questionSecondaryText": ""
     },
-    "q6" : {
+    {
         "questionNumber": 6,
         "questionType": "text",
         "questionText": "How many super long haul flights (10+ hours) did you take last year?",
         "questionAnswer": "",
         "questionSecondaryText": ""
     },
-    "q7" : {
+    {
         "questionNumber": 7,
         "questionType": "text",
         "questionText": "How many short haul flights (<7 hours) did you take last year?",
         "questionAnswer": "",
         "questionSecondaryText": ""
     },
-    "q8" : {
+    {
         "questionNumber": 8,
         "questionType": "text",
         "questionText": "How many long haul flights (7-10 hours) did you take last year?",
         "questionAnswer": "",
         "questionSecondaryText": ""
     },
-    "q9" : {
+    {
         "questionNumber": 9,
         "questionType": "multiple_choice",
         "questionText": "Are you on a renewable electricity tariff?",
@@ -90,7 +89,7 @@
         "questionChoices": ["Yes", "No"],
         "questionSecondaryText": ""
     },
-    "c10" : {
+    {
         "questionNumber": 10,
         "questionType": "multiple_choice",
         "questionText": "What is the monthly electricity bill for your home? If you live with others, please only account for the proportion you use",
@@ -104,7 +103,7 @@
                 ],
         "questionSecondaryText": ""
     },
-    "c11" : {
+    {
         "questionNumber": 11,
         "questionType": "multiple_choice",
         "questionText": "What is the monthly heating bill for your home? If you live with others, please only account for the proportion you use",
@@ -118,14 +117,14 @@
                 ],
         "questionSecondaryText": ""
     },
-    "c12" : {
+    {
         "questionNumber": 12,
         "questionType": "text",
         "questionText": "How many new large appliances (e.g. mobile phones, laptops, TVs, white goods) do you typically buy in a year?",
         "questionAnswer": "",
         "questionSecondaryText": ""
     },
-    "c13" : {
+    {
         "questionNumber": 13,
         "questionType": "multiple_choice",
         "questionText": "How much do you spend in an average month on clothing? Please do not include items you have bought second hand",
@@ -138,4 +137,4 @@
                 ],
         "questionSecondaryText": ""
     }
-}
+ ]}

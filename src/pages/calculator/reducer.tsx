@@ -17,6 +17,8 @@ export const calculator = createSlice<CalculatorState, SliceCaseReducers<Calcula
 
     })
     builder.addCase(getQuestions.fulfilled, (state, action) => {
+      console.log("Payload From Postman Server")
+      console.log(action.payload)
       state.questions = action.payload
     })
     builder.addCase(getQuestions.rejected, (state, action) => {
@@ -30,15 +32,23 @@ export const calculator = createSlice<CalculatorState, SliceCaseReducers<Calcula
     })
 
     builder.addCase(loadQuestions, (state, action) => {
+      console.log("Reducing Load Questions")
+      try{
         fetch(action.payload)
           .then(response => response.json())
           .then(json => {
+            console.log("JSON:", json)
             let questions: QuestionType[] = []
-            json.keys().map((key: string) =>{
+            JSON.parse(json).keys().map((key: string) =>{
               questions.push(json[key])
             })
             state.questions = questions
           });
+      }
+      catch(error){
+        console.log(error)
+        
+      }
     })
 
     builder.addCase(setCounterValue, (state, action) => {

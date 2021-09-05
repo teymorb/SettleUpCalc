@@ -57,7 +57,6 @@ export const Page = ({children}: { children: string | React.ReactElement }) => {
     const dispatch = useDispatch()
     const counter = useSelector<CalculatorState, number>(state => state.counter)
     const text = `v0.${counter}.0 - Copyright SettleUp ltd. 2021`
-    console.log(counter)
     return <Grommet theme={customTheme}>
         <Box fill direction='column' align='center' gap='small' background={`url('${forest}')`}>
             {children}

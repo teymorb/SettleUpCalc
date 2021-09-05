@@ -12,7 +12,8 @@ export const getQuestions = createAsyncThunk<
     'calculator/getQuestions/',
     async () => {
         let api = new Api()
-        return await api.get('https://c48a753e-5320-4d32-babc-b216eba72849.mock.pstmn.io')
+        const question_obj = await api.get('/settleup.co.uk/calculator')
+        return question_obj['questions']
     }
 )
 

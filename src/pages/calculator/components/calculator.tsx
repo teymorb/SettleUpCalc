@@ -49,18 +49,19 @@ export const Calculator = () => {
     const questions = useSelector<CalculatorState, QuestionType[]>(state => state.questions)
     const currentQuestionId = useSelector<CalculatorState, number>(state => state.currentQuestionId) | 1
     useEffect(() => {
-        if(!questions){
-            dispatch(loadQuestions('/SettleUpCalc/src/data/questions.json'))
-            //dispatch(getQuestions())
+        if(questions.length === 0){
+            console.log("Dispatching load questions...")
+            //dispatch(loadQuestions('./src/data/questions.json'))
+            dispatch(getQuestions())
         }},
     [questions])
     const question = questions[currentQuestionId]
     return <Page>
         <Box fill direction='column'>
             <Heading size='small' alignSelf='center' color='white' textAlign='center' margin='large'> Carbon Calculator
-                Calculator </Heading>
+                </Heading>
             {
-                questions ?
+                questions.length !== 0 ?
                     <Box fill direction='column' round='small' align='center'>
                         <Question question={question}/>
                         <FlowControls questions={questions} currentQuestionId={currentQuestionId}/>
